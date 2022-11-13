@@ -1,0 +1,14 @@
+.users {
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+.user {
+    width: 100%;
+    height: 40px;
+    padding: 20px;
+    border: 1px solid black;
+}
+.user h1 {
+    margin: 0;
+}

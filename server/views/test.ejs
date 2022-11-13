@@ -1,0 +1,32 @@
+<%- include('partials/header'); -%>
+
+<H1>Jūsų peržiūrėtos vietos:</H1>
+<% titles.forEach(place =>  {%>
+    <div class="container">
+        <div class="col colpatvarkyti">
+            <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <a class="vietos" href="/recommendation?place=<%= place.title %>" type="submit"><%= place.title %></a>
+            </div>
+            <div class="card-body">
+                <form>
+                    <H3>Ivertinti: </H3>
+                    <a class="btn btn-outline-primary" href="/vieta?place=<%=place.title%>&ivertinimas=1" type="submit">1</a>
+            <a class="btn btn-outline-primary" href="/vieta?place=<%=place.title%>&ivertinimas=2" type="submit">2</a>
+            <a class="btn btn-outline-primary" href="/vieta?place=<%=place.title%>&ivertinimas=3" type="submit">3</a>
+            <a class="btn btn-outline-primary" href="/vieta?place=<%=place.title%>&ivertinimas=4" type="submit">4</a>
+            <a class="btn btn-outline-primary" href="/vieta?place=<%=place.title%>&ivertinimas=5" type="submit">5</a>
+                </form>
+            </div>
+          </div>
+          </div>
+    </div>
+    
+   
+
+    
+
+
+<%}) %>
+
+<%- include('partials/footer'); -%>

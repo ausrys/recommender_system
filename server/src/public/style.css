@@ -1,0 +1,122 @@
+
+nav {
+    text-align: center;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.lopas {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  .formosbtn {
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+  }
+  p {
+    padding: 20px;
+  }
+  .lopas {
+    padding: 50px;
+    border: solid 1px black;
+    margin: auto;
+  }
+  footer {
+      position: fixed;
+      padding: 10px 10px 0px 10px;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: #f8f9fa;
+  }
+  .card-text {
+      padding: 0;
+  }
+  .col {
+      padding: 10px;
+  }
+  
+  h3 {
+      margin-bottom: 15;
+  }
+  .card:hover {
+    cursor: pointer;
+  }
+  
+  a:hover, a {
+    text-decoration: none;
+    color: black;
+  }
+  .vietosapr {
+    text-align: left;
+  }
+  #map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+  #floating-panel {
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+  }
+  section {
+    text-align: center;
+  }
+  .form-control {
+    width: 50%;
+    text-align: center;
+  }
+  .btn-block {
+    margin: auto;
+    width: 50%;
+  }
+  .vietos {
+    margin: 10px;
+  }
+  .score {
+    margin: 5px;
+    padding: 5px;
+  }
+  h1 {
+    text-align: center;
+  }
+  .colpatvarkyti {
+    max-width: 40%;
+    margin: auto;
+  }
+  .headermyg {
+    margin: 5px;
+  }
+  .atsi {
+    margin-left: 20%;
+    margin-right: 0px;
+  }
+  .error {
+    color: red;
+  }
+img {
+  max-width:360px ;
+  max-height: 240px;
+}
+/* New Css */
+
+/* Footer */
+ footer p {
+  text-align: center;
+  justify-content: center;
+ }

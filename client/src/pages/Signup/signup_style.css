@@ -1,0 +1,56 @@
+
+* {
+    font-family: 'Poppins', sans-serif!important;
+}
+form {
+    width: 50%;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 35px rgba(0,0,0,0.2);
+}
+.registration-form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(250, 246, 232);
+}
+.signup_page {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    width: 100%;
+}
+.form-box {
+    width: 50%;
+}
+.signup_image {
+    width: 50%;
+    background-image: url(../../assets/images/1318313.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+button  {
+    border: 1px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    width: 40%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 1rem;
+    background-color: rgb(81, 185, 245);
+    color: white;
+    font-weight: 700;
+    
+
+}
+button[type='submit'] {
+    margin-right: 20%;
+}
+.registration-form h1 {
+    text-transform: uppercase;
+    border-bottom: 2px solid black;
+}

@@ -1,0 +1,93 @@
+<%- include('partials/header'); -%>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script>
+
+//   let uluru = {};
+//   if(navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(function(userCords) {
+//           uluru = { lat: userCords.coords.latitude, lng: userCords.coords.longitude };
+//         });
+        
+//       }
+//       else {
+//           console.log("Nepatvirtino");
+//       }
+//   // Initialize and add the map
+//   function initMap() {
+//     const directionsRenderer = new google.maps.DirectionsRenderer();
+//     const directionsService = new google.maps.DirectionsService();
+//     // The location of Uluru
+//     // The map, centered at Uluru
+//     const map = new google.maps.Map(document.getElementById("map"), {
+//       zoom: 8,
+//       center: uluru,
+//     });
+//     // The marker, positioned at Uluru
+//     // const marker = new google.maps.Marker({
+//     //   position: uluru,
+//     //   map: map,
+//     // });
+//     directionsRenderer.setMap(map);
+//         calculateAndDisplayRoute(directionsService, directionsRenderer);
+      
+//   }
+//   function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+//         directionsService.route(
+//           {
+//             origin: uluru,
+//             destination: { lat: <%=gswcords.y%>, lng: <%=gswcords.x%> },
+//             travelMode: google.maps.TravelMode["DRIVING"],
+//           },
+//           (response, status) => {
+//             if (status == "OK") {
+//               directionsRenderer.setDirections(response);
+//             } else {
+//               window.alert("Directions request failed due to " + status);
+//             }
+//           }
+//         );
+//       }
+// </script>
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-4">
+      
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h4 name= "pavadinimas" value = "<%= title2 %>" class="fw-light text-center"><%= title2 %></h4>
+        <p><%=aprasymas%></p>
+      </div>
+    </div>
+    <div id="map" class="mb-4"></div>
+    <h4 class="fw-light text-center"> Panašios vietos į <%= title2 %></h4>
+  </section>
+<% if (rplaces.length > 0) { %>
+  <% let i =0; %>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% rplaces.forEach((filmas ) => { %>
+              <%if (filmas != rplaces[0]) {%>
+            <div class="col">
+              <a class="card shadow-sm" href="/recommendation?place=<%= filmas.title %>" type="submit">
+                <img height="240" width="359" src=<%//data[i]%> alt="Image not found">
+                <% i++;%>
+                <div class="card-body">
+                  <p class="card-text" ><%= filmas.title %></p>
+                  <div class="d-flex justify-content-between align-items-center">
+
+                   
+                  </div>
+                </div>
+              </a>
+            </div>
+            <%}%>
+    <%}) %>
+  <% } %>
+  
+  </main>
+  <!-- <script
+  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly"
+  async
+></script> -->
+<%- include('partials/footer'); -%>

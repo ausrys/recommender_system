@@ -1,0 +1,81 @@
+<%- include('partials/header'); -%>
+<div class="container my-4">
+  <div class="container">
+     <section id="register-form">
+        
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+              <div class="card-header">Login</div>
+              <div class="card-body">
+                <form class="form-horizontal">
+        
+                  <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+                            
+                        </div>
+                        <div class="email error"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="cols-sm-2 control-label">Password</label>
+                  <div class="cols-sm-10">
+                      <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                          <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                      </div>
+                      <div class="pass error "></div>
+                  </div>
+              </div>
+        
+              <div class="form-group ">
+                <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Prisijungti</button>
+            </div>
+              </div>
+  
+            </div>
+        </div>
+    </div>
+       
+       <script>
+         const emailError = document.querySelector('.email.error');
+          const passError = document.querySelector('.pass.error');
+         const form = document.querySelector('form');
+         form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+            emailError.textContent = '';
+            passError.textContent = '';
+            // get values
+            const email = form.email.value;
+            const password = form.password.value;
+            try {
+              const res = await fetch('/login', {
+                method: 'POST',
+                body: JSON.stringify({email, password }),
+                headers: {'Content-Type': 'application/json'}
+              });
+              const data = await res.json();
+              if(data.errors) {
+                emailError.textContent = data.errors.email;
+                passError.textContent = data.errors.password;
+              }
+              if(data.user) {
+                location.assign('/forma');
+              }
+            } catch (error) {
+              console.log("Nepavyko")
+            }
+         })
+       </script>
+       
+         
+      </div>
+    </section>
+  </div>
+</div>
+<%- include('partials/footer'); -%>
